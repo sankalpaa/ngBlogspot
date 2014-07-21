@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="">
+	<head>
+		<script src="../../Scripts/angular.js"></script>
+		<title></title>
+	</head>
+<body>
+	<div>Currency : {{125.523 | currency}}</div>
+	<br/>
+	<div>Decimal : {{125.523 | number:4}}</div>
+	<div>Integer : {{125.523 | number:0}}</div>
+	<br/>
+	<div>Upper Case : {{'ng-BlogSpot'|uppercase}}</div>
+	<div>Lower Case : {{'ng-BlogSpot'|lowercase}}</div>
+	<br/>
+	<div>Medium Date : {{1405841355346 | date:'medium'}}</div>
+	<div>Short Date : {{1405841355346 | date:'short'}}</div>
+	<div>Full Date : {{1405841355346 | date:'fullDate'}}</div>
+	<br/>
+	<div>Short Time : {{1405841355346 | date:'shortTime'}}</div>
+	<div>Year : {{1405841355346 | date:'yyyy'}}</div>
+	<div>Custom Format : {{1405841355346 | date:'yy/MMMM/dd hh:mm:ss'}}</div>
+</body>
+</html>

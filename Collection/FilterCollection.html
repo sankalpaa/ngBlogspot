@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" data-ng-app="filterTest">
+<head>
+	<title></title>
+	<script src="../../Scripts/angular.js"></script>
+	<script src="filterCollection.js"></script>
+</head>
+	<body>
+		<div>
+			<b>Basic Search</b>
+			<div>
+				Search:
+				<input type="text" data-ng-model="nameFilter"/>
+			</div>
+			<div data-ng-repeat="name in ['Anne','Sam','Peter', 'John','Oliver'] | filter:nameFilter">
+				{{name}}
+			</div>
+		</div>
+		<br/>
+		<div>
+			<b>Strict Search</b>
+			<div>
+				Search :
+				<input type="text" data-ng-model="strictNameFilter"/>
+			</div>
+			<div data-ng-repeat="name in ['Anne','Sam','Peter', 'John','Oliver'] | filter:strictNameFilter:true">
+				{{name}}
+			</div>
+		</div>
+		<br/>
+		<div data-ng-controller="filterTestController">
+			<b>Search Using Function</b>
+			<div>Only Email.com Address</div>
+			<div data-ng-repeat="name in ['anne@email3.com','sam@email2.com','peter@email.com', 'John@email2.com','oliver@email.com'] | filter:onlyEmailCom">
+				{{name}}
+			</div>
+		</div>
+		<br/>
+		<div>
+			<b>Strict Search</b>
+			<div>
+				{{ [{'name':'Anne','email':'anne@email3.com'},{'name':'Sam','email':'sam@email2.com'}] | json }}
+			</div>
+		</div>
+	</body>
+</html>
